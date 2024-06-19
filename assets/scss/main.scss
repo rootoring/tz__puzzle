@@ -1,0 +1,17 @@
+@import "utils";
+@import "base/reset";
+@import "base/typography";
+
+body {
+  font-family: "Helvetica";
+  background-color: $gray500;
+}
+main {
+  padding: 30px;
+}
+
+.container {
+  max-width: $max-w;
+  min-width: $min-w;
+  margin: 0 auto;
+}

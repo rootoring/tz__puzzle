@@ -47,11 +47,15 @@ const highlightedIndex = ref(0);
 const router = useRouter();
 let debounceTimeout = null;
 
-watch(searchQuery, () => {
+watch(searchQuery, (newVal) => {
+  if (newVal.length < 3) {
+    filteredUsers.value = [];
+    return;
+  }
   clearTimeout(debounceTimeout);
   debounceTimeout = setTimeout(() => {
     performSearch();
-  }, 300);
+  }, 600);
 });
 
 const performSearch = () => {
